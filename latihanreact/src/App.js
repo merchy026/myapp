@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
-import Parent from './Comonent/Class/Parent';
+import BoostrapComp from './Comonent/Class/BootstrapComp';
+
 //import Home from './Comonent/Fungsional/Home';
 //import Beranda from './Comonent/Class/Beranda';
 //import './App.css';
@@ -8,7 +8,7 @@ import Parent from './Comonent/Class/Parent';
 function App() {
   return (
     <div className="App">
-      <Parent/>
+      <BoostrapComp/>
     </div>
   );
 }
