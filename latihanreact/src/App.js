@@ -5,7 +5,8 @@ import NavbarComp from './Comonent/Fungsional/NavbarComp';
 import HomePage from './Comonent/Fungsional/HomePage';
 import About from './Comonent/Fungsional/AboutComp';
 import { Form } from 'reactstrap';
-import DetailComp from './Comonent/Fungsional/DetailComp';
+//import DetailComp from './Comonent/Fungsional/DetailComp';
+import LisComp from './Comonent/Class/ListComp';
 
 //import Home from './Comonent/Fungsional/Home';
 //import Beranda from './Comonent/Class/Beranda';
@@ -18,7 +19,8 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/detail/:id" component={DetailComp} />
+        <Route exact path="/mahasiswa" component={LisComp} />
+       {/* <Route exact path="/detail/:id" component={DetailComp} /> */}
 
       </Switch>
 
