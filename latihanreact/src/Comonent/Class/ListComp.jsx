@@ -28,8 +28,9 @@ class LisComp extends PureComponent {
         return (
             <Container>
                 <h2>Data Mahasiswa</h2>
+                <NavLink href="/mahasiswa/tambah"><Button color="success">Tambah Data</Button></NavLink>
                 <hr />
-                <Table className="table-border">
+                <Table className="table-bordered">
                     <thead>
                         <tr>
                             <th>NIM</th>

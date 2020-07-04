@@ -7,6 +7,7 @@ import About from './Comonent/Fungsional/AboutComp';
 import { Form } from 'reactstrap';
 //import DetailComp from './Comonent/Fungsional/DetailComp';
 import LisComp from './Comonent/Class/ListComp';
+import TambahComp from './Comonent/Class/Tambah';
 
 //import Home from './Comonent/Fungsional/Home';
 //import Beranda from './Comonent/Class/Beranda';
@@ -20,6 +21,7 @@ const App = () => {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/about" component={About} />
         <Route exact path="/mahasiswa" component={LisComp} />
+        <Route exact path="/mahasiswa/tambah" component={TambahComp} />
        {/* <Route exact path="/detail/:id" component={DetailComp} /> */}
 
       </Switch>
