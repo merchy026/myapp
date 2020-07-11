@@ -1,21 +1,22 @@
 import React, { PureComponent } from 'react'
 import axios from 'axios'
-import { Container, Col, Row, Form, FormGroup, Alert, Label, Input, Button } from 'reactstrap'
+import qs from 'querystring'
 import { Link } from 'react-router-dom'
+import { Container, Col, Row, Form, FormGroup, Alert, Label, Input, Button } from 'reactstrap'
 
-const api = 'http://localhost:3001'
+const api = "http://localhost:3001"
 
-class TambahComp extends PureComponent {
+class EditComp extends PureComponent {
     constructor(props) {
         super(props)
 
         this.state = {
-            nim: '',
-            nama: '',
-            jurusan: '',
+            id_mahasiswa: this.props.location.state.id_mahasiswa,
+            nim: this.props.location.state.nim,
+            nama: this.props.location.state.nama,
+            jurusan: this.props.location.state.jurusan,
             response: '',
-            display:'none'
-
+            display: 'none'
         }
     }
 
@@ -23,34 +24,37 @@ class TambahComp extends PureComponent {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    Addmahasiswa = () => {
-        axios.post(api + '/tambah', {
-            nim: this.state.nim,
-            nama: this.state.nama,
-            jurusan: this.state.jurusan
-        }).then(json =>{
-            if(json.data.state === 200) {
-                this.setState({
-                    response: json.data.values,
-                    display: 'block'
-                })
-            }else {
-                this.setState({
-                    response: json.data.values,
-                    display: 'block'
-                })
-            }
-        })
-    }
+ubahmahasiswa = (idmahasiswa) => {
+    const data = qs.stringify({
+        id_mahasiswa: idmahasiswa,
+        nim: this.state.nim,
+        nama: this.state.nama,
+        jurusan: this.state.jurusan
+    });
 
-
+    axios.put(api+ '/ubah', data)
+    .then(json => {
+        if(json === 200){
+            this.setState({
+                response: json.data.values,
+                display: 'block'
+            })
+        }else {
+            this.setState({
+                response: json.data.values,
+                display: 'block'
+            })
+        }
+    })
+}
 
     render() {
         return (
             <Container>
                 <h4>Form Tambah Data</h4>
-                <Alert color="success" style={{display: this.state.display}}>
-                    {this.state.response }
+                <Alert color="success" style={{ display: this.state.display }}>
+                    {this.state.response}
+
                 </Alert>
                 <Form className="form">
                     <Col>
@@ -82,7 +86,7 @@ class TambahComp extends PureComponent {
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Button type="button" onClick={this.Addmahasiswa}>Submit</Button>
+                                    <Button type="button" onClick={()=>this.ubahmahasiswa(this.state.id_mahasiswa)}>Update</Button>
                                 </Col>
                             </Row>
                         </FormGroup>
@@ -90,8 +94,9 @@ class TambahComp extends PureComponent {
                 </Form>
             </Container>
 
+
         )
     }
 }
 
-export default TambahComp
+export default EditComp
