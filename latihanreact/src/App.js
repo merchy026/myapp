@@ -9,6 +9,8 @@ import { Form } from 'reactstrap';
 import LisComp from './Comonent/Class/ListComp';
 import TambahComp from './Comonent/Class/Tambah';
 import EditComp from './Comonent/Class/EditComp';
+import KelasComp from './Comonent/Hooks/Class/KelasComp';
+import HooksComp from './Comonent/Hooks/Functional/HooksComp';
 
 //import Home from './Comonent/Fungsional/Home';
 //import Beranda from './Comonent/Class/Beranda';
@@ -24,6 +26,8 @@ const App = () => {
         <Route exact path="/mahasiswa" component={LisComp} />
         <Route exact path="/mahasiswa/tambah" component={TambahComp} />
         <Route exact path="/mahasiswa/edit" component={EditComp} />
+        <Route exact path="/kelas" component={KelasComp} />
+        <Route exact path="/hooks" component={HooksComp} />
         
        {/* <Route exact path="/detail/:id" component={DetailComp} /> */}
 
