@@ -11,6 +11,7 @@ import TambahComp from './Comonent/Class/Tambah';
 import EditComp from './Comonent/Class/EditComp';
 import KelasComp from './Comonent/Hooks/Class/KelasComp';
 import HooksComp from './Comonent/Hooks/Functional/HooksComp';
+import HooksUseEffects from './Comonent/Hooks/Functional/HooksUseEffects';
 
 //import Home from './Comonent/Fungsional/Home';
 //import Beranda from './Comonent/Class/Beranda';
@@ -28,6 +29,7 @@ const App = () => {
         <Route exact path="/mahasiswa/edit" component={EditComp} />
         <Route exact path="/kelas" component={KelasComp} />
         <Route exact path="/hooks" component={HooksComp} />
+        <Route exact path="/useeffects" component={HooksUseEffects} />
         
        {/* <Route exact path="/detail/:id" component={DetailComp} /> */}
 
