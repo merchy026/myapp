@@ -14,6 +14,7 @@ import HooksComp from './Comonent/Hooks/Functional/HooksComp';
 import HooksUseEffects from './Comonent/Hooks/Functional/HooksUseEffects';
 import { CartContext } from './CardContext';
 import ProductComp from './Comonent/Hooks/Functional/ProductComp';
+import HooksRecucer from './Comonent/Hooks/Functional/HookReducer';
 
 //import Home from './Comonent/Fungsional/Home';
 //import Beranda from './Comonent/Class/Beranda';
@@ -37,6 +38,7 @@ const App = () => {
           <Route exact path="/hooks" component={HooksComp} />
           <Route exact path="/useeffects" component={HooksUseEffects} />
           <Route exact path="/produk" component={ProductComp} />
+          <Route exact path="/reducer" component= {HooksRecucer} />
 
           {/* <Route exact path="/detail/:id" component={DetailComp} /> */}
 
