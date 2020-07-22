@@ -46,7 +46,7 @@ const App = () => {
       </CartContext.Provider>
     </BrowserRouter>
 
-  );
+  );       
 }
      
 export default App;
