@@ -11,10 +11,14 @@ class EditComp extends PureComponent {
         super(props)
 
         this.state = {
-            id_mahasiswa: this.props.location.state.id_mahasiswa,
-            nim: this.props.location.state.nim,
+            id: this.props.location.state.id,
             nama: this.props.location.state.nama,
-            jurusan: this.props.location.state.jurusan,
+            alamat: this.props.location.state.nama,
+            telepon: this.props.location.state.alamat,
+            jenis_kelamin: this.props.location.state.jenis_kelamin,
+            berat_badan: this.props.location.state.berat_badan,
+            tekanan_darah: this.props.location.state.tekanan_darah,
+            golongan_darah: this.props.location.state.golongan_darah,
             response: '',
             display: 'none'
         }
@@ -24,12 +28,16 @@ class EditComp extends PureComponent {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-ubahmahasiswa = (idmahasiswa) => {
+ubahmahasiswa = (idanggota) => {
     const data = qs.stringify({
-        id_mahasiswa: idmahasiswa,
-        nim: this.state.nim,
+        id: idanggota,
         nama: this.state.nama,
-        jurusan: this.state.jurusan
+        alamat: this.state.alamat,
+        telepon: this.state.telepon,
+        jenis_kelamin: this.state.jenis_kelamin,
+        berat_badan: this.state.berat_badan,
+        tekanan_darah: this.state.tekanan_darah,
+        golongan_darah: this.state.golongan_darah
     });
 
     axios.put(api+ '/ubah', data)
@@ -54,18 +62,9 @@ ubahmahasiswa = (idmahasiswa) => {
                 <h4>Form Tambah Data</h4>
                 <Alert color="success" style={{ display: this.state.display }}>
                     {this.state.response}
-
                 </Alert>
                 <Form className="form">
                     <Col>
-                        <Label>NIM</Label>
-                        <FormGroup>
-                            <Row>
-                                <Col>
-                                    <Input type="text" name="nim" value={this.state.nim} onChange={this.handleChange} placeholder="Masukan NIM" />
-                                </Col>
-                            </Row>
-                        </FormGroup>
                         <Label>Nama</Label>
                         <FormGroup>
                             <Row>
@@ -74,11 +73,51 @@ ubahmahasiswa = (idmahasiswa) => {
                                 </Col>
                             </Row>
                         </FormGroup>
-                        <Label>Jurusan</Label>
+                        <Label>Alamat</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="jurusan" value={this.state.jurusan} onChange={this.handleChange} placeholder="Masukan Jurusan" />
+                                    <Input type="text" name="alamat" value={this.state.alamat} onChange={this.handleChange} placeholder="Masukan Alamat" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Telepon</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="telepon" value={this.state.telepon} onChange={this.handleChange} placeholder="Masukan Telepon" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Jenis Kelamin</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="jenis_kelamin" value={this.state.jenis_kelamin} onChange={this.handleChange} placeholder="Masukan Jenis Kelmain" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Berat Badan</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="berat_badan" value={this.state.berat_badan} onChange={this.handleChange} placeholder="Masukan Berat Badan" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Tekanan Darah</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="tekanan_darah" value={this.state.tekanan_darah} onChange={this.handleChange} placeholder="Masukan Tekanan Darah" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Golongan Darah</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="golongan_darah" value={this.state.golongan_darah} onChange={this.handleChange} placeholder="Masukan Golongan Darah" />
                                 </Col>
                             </Row>
                         </FormGroup>
@@ -86,7 +125,7 @@ ubahmahasiswa = (idmahasiswa) => {
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Button type="button" onClick={()=>this.ubahmahasiswa(this.state.id_mahasiswa)}>Update</Button>
+                                    <Button type="button" onClick={()=>this.ubahanggota(this.state.id)}>Update</Button>
                                 </Col>
                             </Row>
                         </FormGroup>

@@ -11,7 +11,7 @@ class LisComp extends PureComponent {
         super(props)
 
         this.state = {
-            mahasiswa: [],
+            calonanggota: [],
             response: '',
             display: 'none'
         }
@@ -20,15 +20,15 @@ class LisComp extends PureComponent {
     componentDidMount() {
         axios.get(api + '/tampil').then(res => {
             this.setState({
-                mahasiswa: res.data.values
+                calonanggota: res.data.values
             })
         })
     }
 
-    Deletemahasiswa = (idmahasiswa) => {
-        const { mahasiswa } = this.state
+    Deleteanggota = (idanggota) => {
+        const { calonanggota } = this.state
         const data = qs.stringify({
-            id_mahasiswa: idmahasiswa
+            id: idanggota
         })
 
         axios.delete(api + '/hapus',
@@ -40,10 +40,10 @@ class LisComp extends PureComponent {
             if (json.data.status === 200) {
                 this.setState({
                     response: json.data.values,
-                    mahasiswa: mahasiswa.filter(mahasiswa => mahasiswa.id_mahasiswa !== idmahasiswa),
+                    calonanggota: calonanggota.filter(calonanggota => calonanggota.id !== idanggota),
                     display: 'block'
                 })
-                //this.props.history.push('/mahasiswa')
+                //this.props.history.push('/calonanggota')
             } else {
                 this.setState({
                     response: json.data.values,
@@ -58,37 +58,50 @@ class LisComp extends PureComponent {
     render() {
         return (
             <Container>
-                <h2>Data Mahasiswa</h2>
+                <h2>Data Anggota</h2>
                 <Alert color="success" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>
-                <NavLink href="/mahasiswa/tambah"><Button color="success">Tambah Data</Button></NavLink>
+                <NavLink href="/calonanggota/tambah"><Button color="success">Tambah Data</Button></NavLink>
                 <hr />
                 <Table className="table-bordered">
                     <thead>
                         <tr>
-                            <th>NIM</th>
                             <th>Nama</th>
-                            <th>Jurusan</th>
+                            <th>Alamat</th>
+                            <th>Telepon</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Berat Badan</th>
+                            <th>Tekanan Darah</th>
+                            <th>Golongan Darah</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.mahasiswa.map(mahasiswa =>
-                            <tr key={mahasiswa.id_mahasiswa}>
-                                <td>{mahasiswa.nim}</td>
-                                <td>{mahasiswa.nama}</td>
-                                <td>{mahasiswa.jurusan}</td>
+                        {this.state.calonanggota.map(calonanggota =>
+                            <tr key={calonanggota.id}>
+                                <td>{calonanggota.nama}</td>
+                                <td>{calonanggota.alamat}</td>
+                                <td>{calonanggota.telepon}</td>
+                                <td>{calonanggota.jenis_kelamin}</td>
+                                <td>{calonanggota.berat_badan}</td>
+                                <td>{calonanggota.tekanan_darah}</td>
+                                <td>{calonanggota.golongan_darah}</td>
+
                                 <td>
                                     <Link to=
                                         {
                                             {
-                                                pathname: `/mahasiswa/edit`,
+                                                pathname: `/calonanggota/edit`,
                                                 state: {
-                                                    id_mahasiswa: mahasiswa.id_mahasiswa,
-                                                    nim: mahasiswa.nim,
-                                                    nama: mahasiswa.nama,
-                                                    jurusan: mahasiswa.jurusan
+                                                    id: calonanggota.id,
+                                                    nama: calonanggota.nama,
+                                                    alamat: calonanggota.alamat,
+                                                    telepon: calonanggota.telepon,
+                                                    jenis_kelamin: calonanggota.jenis_kelamin,
+                                                    berat_badan: calonanggota.berat_badan,
+                                                    tekanan_darah: calonanggota.tekanan_darah,
+                                                    golongan_darah: calonanggota.golongan_darah
                                                 }
                                             }
                                         }>
@@ -96,7 +109,7 @@ class LisComp extends PureComponent {
 
                                     </Link>
                                     <span> </span>
-                                    <Button onClick={() => this.Deletemahasiswa(mahasiswa.id_mahasiswa)} color="danger">Hapus</Button>
+                                    <Button onClick={() => this.Deleteanggota(calonanggota.id)} color="danger">Hapus</Button>
                                 </td>
                             </tr>
 

@@ -10,10 +10,13 @@ class TambahComp extends PureComponent {
         super(props)
 
         this.state = {
-            nim: '',
             nama: '',
-            jurusan: '',
-            response: '',
+            alamat: '',
+            telepon: '',
+            jenis_kelamin: '',
+            berat_badan: '',
+            tekanan_darah: '',
+            golongan_darah: '',
             display:'none'
 
         }
@@ -23,11 +26,15 @@ class TambahComp extends PureComponent {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    Addmahasiswa = () => {
+    Addanggota = () => {
         axios.post(api + '/tambah', {
-            nim: this.state.nim,
             nama: this.state.nama,
-            jurusan: this.state.jurusan
+            alamat: this.state.alamat,
+            telepon: this.state.telepon,
+            jenis_kelamin: this.state.jenis_kelamin,
+            berat_badan: this.state.berat_badan,
+            tekanan_darah: this.state.tekanan_darah,
+            golongan_darah: this.state.golongan_darah
         }).then(json =>{
             if(json.data.state === 200) {
                 this.setState({
@@ -54,11 +61,60 @@ class TambahComp extends PureComponent {
                 </Alert>
                 <Form className="form">
                     <Col>
-                        <Label>NIM</Label>
+                        <Label>Nama</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Input type="text" name="nim" value={this.state.nim} onChange={this.handleChange} placeholder="Masukan NIM" />
+                                    <Input type="text" name="nama" value={this.state.nama} onChange={this.handleChange} placeholder="Masukan Nama" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Alamat</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="alamat" value={this.state.alamat} onChange={this.handleChange} placeholder="Masukan Alamat" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Telepon</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="telepon" value={this.state.telepon} onChange={this.handleChange} placeholder="Masukan Telepon" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        
+                        <Label>Jenia Kelamin</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="jenis_kelamin" value={this.state.jenis_kelamin} onChange={this.handleChange} placeholder="Masukan Jenis Kelmain" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Berat Badan</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="berat_badan" value={this.state.berat_badan} onChange={this.handleChange} placeholder="Berat Badan" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Tekanan Darah</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="tekanan_darah" value={this.state.tekanan_darah} onChange={this.handleChange} placeholder="Tekanan Darah"/>
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Golongan Darah</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="golongan_darah" value={this.state.golongan_darah} onChange={this.handleChange} placeholder="Masukan Golongan Darah" />
                                 </Col>
                             </Row>
                         </FormGroup>
@@ -70,19 +126,13 @@ class TambahComp extends PureComponent {
                                 </Col>
                             </Row>
                         </FormGroup>
-                        <Label>Jurusan</Label>
-                        <FormGroup>
-                            <Row>
-                                <Col>
-                                    <Input type="text" name="jurusan" value={this.state.jurusan} onChange={this.handleChange} placeholder="Masukan Jurusan" />
-                                </Col>
-                            </Row>
-                        </FormGroup>
+                       
+                        
 
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Button type="button" onClick={this.Addmahasiswa}>Submit</Button>
+                                    <Button type="button" onClick={this.Addanggota}>Submit</Button>
                                 </Col>
                             </Row>
                         </FormGroup>
