@@ -17,6 +17,7 @@ import ProductComp from './Comonent/Hooks/Functional/ProductComp';
 import HooksRecucer from './Comonent/Hooks/Functional/HookReducer';
 import Tagihan from './Comonent/Hooks/Functional/Tagihan';
 
+
 //import Home from './Comonent/Fungsional/Home';
 //import Beranda from './Comonent/Class/Beranda';
 //import './App.css';
@@ -60,9 +61,9 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/mahasiswa" component={LisComp} />
-          <Route exact path="/mahasiswa/tambah" component={TambahComp} />
-          <Route exact path="/mahasiswa/edit" component={EditComp} />
+          <Route exact path="/calonanggota" component={LisComp} />
+          <Route exact path="/calonanggota/tambah" component={TambahComp} />
+          <Route exact path="/calonanggota/edit" component={EditComp} />
           <Route exact path="/kelas" component={KelasComp} />
           <Route exact path="/hooks" component={HooksComp} />
           <Route exact path="/useeffects" component={HooksUseEffects} />

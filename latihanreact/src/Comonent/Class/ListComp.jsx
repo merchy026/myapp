@@ -5,18 +5,15 @@ import { Table, Button, Container, NavLink, Alert } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
 const api = 'http://localhost:3001'
-
 class LisComp extends PureComponent {
     constructor(props) {
         super(props)
-
         this.state = {
             calonanggota: [],
             response: '',
             display: 'none'
         }
     }
-
     componentDidMount() {
         axios.get(api + '/tampil').then(res => {
             this.setState({
@@ -28,7 +25,7 @@ class LisComp extends PureComponent {
     Deleteanggota = (idanggota) => {
         const { calonanggota } = this.state
         const data = qs.stringify({
-            id: idanggota
+            id_anggota: idanggota
         })
 
         axios.delete(api + '/hapus',
@@ -40,7 +37,7 @@ class LisComp extends PureComponent {
             if (json.data.status === 200) {
                 this.setState({
                     response: json.data.values,
-                    calonanggota: calonanggota.filter(calonanggota => calonanggota.id !== idanggota),
+                    calonanggota: calonanggota.filter(calonanggota => calonanggota.id_anggota !== idanggota),
                     display: 'block'
                 })
                 //this.props.history.push('/calonanggota')
@@ -49,7 +46,7 @@ class LisComp extends PureComponent {
                     response: json.data.values,
                     display: 'block'
                 })
-                //this.props.history.push('/mahasiswa')
+                //this.props.history.push('/calonanggota')
 
             }
         })
@@ -79,7 +76,7 @@ class LisComp extends PureComponent {
                     </thead>
                     <tbody>
                         {this.state.calonanggota.map(calonanggota =>
-                            <tr key={calonanggota.id}>
+                            <tr key={calonanggota.id_anggota}>
                                 <td>{calonanggota.nama}</td>
                                 <td>{calonanggota.alamat}</td>
                                 <td>{calonanggota.telepon}</td>
@@ -94,7 +91,7 @@ class LisComp extends PureComponent {
                                             {
                                                 pathname: `/calonanggota/edit`,
                                                 state: {
-                                                    id: calonanggota.id,
+                                                    id_anggota: calonanggota.id_anggota,
                                                     nama: calonanggota.nama,
                                                     alamat: calonanggota.alamat,
                                                     telepon: calonanggota.telepon,
@@ -106,13 +103,12 @@ class LisComp extends PureComponent {
                                             }
                                         }>
                                         <Button>Edit</Button>
-
+                                        
                                     </Link>
                                     <span> </span>
-                                    <Button onClick={() => this.Deleteanggota(calonanggota.id)} color="danger">Hapus</Button>
+                                    <Button onClick={() => this.Deleteanggota(calonanggota.id_anggota)} color="danger">Hapus</Button>
                                 </td>
                             </tr>
-
                         )}
                     </tbody>
                 </Table>

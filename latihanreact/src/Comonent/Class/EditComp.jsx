@@ -11,7 +11,7 @@ class EditComp extends PureComponent {
         super(props)
 
         this.state = {
-            id: this.props.location.state.id,
+            id_anggota: this.props.location.state.id_anggota,
             nama: this.props.location.state.nama,
             alamat: this.props.location.state.nama,
             telepon: this.props.location.state.alamat,
@@ -28,9 +28,9 @@ class EditComp extends PureComponent {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-ubahmahasiswa = (idanggota) => {
+ubahanggota = (idanggota) => {
     const data = qs.stringify({
-        id: idanggota,
+        id_anggota: idanggota,
         nama: this.state.nama,
         alamat: this.state.alamat,
         telepon: this.state.telepon,
@@ -39,7 +39,6 @@ ubahmahasiswa = (idanggota) => {
         tekanan_darah: this.state.tekanan_darah,
         golongan_darah: this.state.golongan_darah
     });
-
     axios.put(api+ '/ubah', data)
     .then(json => {
         if(json === 200){
@@ -59,12 +58,23 @@ ubahmahasiswa = (idanggota) => {
     render() {
         return (
             <Container>
-                <h4>Form Tambah Data</h4>
+                <h4>Form Tambah Edit</h4>
                 <Alert color="success" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>
                 <Form className="form">
                     <Col>
+
+                    <Label>Id</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="id_anggota" value={this.state.id_anggota} onChange={this.handleChange} placeholder="Masukan Id" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+
+
                         <Label>Nama</Label>
                         <FormGroup>
                             <Row>
@@ -125,15 +135,13 @@ ubahmahasiswa = (idanggota) => {
                         <FormGroup>
                             <Row>
                                 <Col>
-                                    <Button type="button" onClick={()=>this.ubahanggota(this.state.id)}>Update</Button>
+                                    <Button type="button" onClick={()=>this.ubahanggota(this.state.id_anggota)}>Update</Button>
                                 </Col>
                             </Row>
                         </FormGroup>
                     </Col>
                 </Form>
             </Container>
-
-
         )
     }
 }

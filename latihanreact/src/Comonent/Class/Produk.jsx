@@ -31,12 +31,11 @@ class Produk extends Component {
         return (
             <div className ="box-stock">
                 <h2>{this.props.nama}</h2>
-                <img src="https://asset-a.grid.id/crop/0x0:0x0/360x240/photo/2020/05/05/1131130865.jpg" alt=""/>
+                <img src="https://assets-a1.kompasiana.com/items/album/2019/02/08/donor-darah-5c5d55acc112fe5e867901e2.jpg" alt=""/>
                 <p><b> Rp. {this.props.harga}</b></p>
                 <p>{this.state.stock}</p>
                 <button className="btn-click" onClick={this.ButtonBeli} disabled={this.state.disabled}>Beli</button> 
                 <p>{this.state.status}</p>
-
             </div>
         ) 
     }

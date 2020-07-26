@@ -7,18 +7,20 @@ function AboutComp() {
         <div>
             <Jumbotron>
                 <h1 className="display-3">About Us!</h1>
-                <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
+                <p className="lead">Donor Darah.</p>
                 <hr className="my-2" />
-                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <p>Wesite ini hadir untuk memberikan layanan donor darah, untuk membantu kekurangan darah bagi masyrakat umum yang membutuhkan.
+                Mengapa harus donor darah ?
+                Karena Donor darah adalah kegiatan yang positif dan mulia dan kita bisa menolong sesama. Donor darah bisa membantu mereka yang membutuhkan darah dalam situasi mendesak. Karena seringkali saat pasien dalam kondisi kritis, pihak PMI atau rumah sakit tak memiliki stok darah yang cukup. Nyatanya, donor darah tak hanya bermanfaat bagi penerima (resipien) saja, namun pendonor juga menerima manfaat yang luar biasa. Banyak penelitian yang berhasil membuktikan secara medis bahwa mendonorkan darah sebenarnya menguntungkan.</p>
                 <p className="lead">
                     <Button color="primary">Learn More</Button>
                 </p>
             </Jumbotron>
             <Container>
-                 <Row>
-                    <Col><CardComp id="1" judul="Belajar React" tanggal="28/06/2020"/></Col>
-                    <Col><CardComp id="2" judul="Belajar Golang" tanggal="29/06/2020"/></Col>
-                    <Col><CardComp id="3" judul="Belajar PHP" tanggal="30/06/2020"/></Col>
+                <Row>
+                    <Col><CardComp id="1" judul="Timbangan" tanggal="28/06/2020" /></Col>
+                    <Col><CardComp id="2" judul="Kantong Darah" tanggal="29/06/2020" /></Col>
+                    <Col><CardComp id="3" judul="Tensi" tanggal="30/06/2020" /></Col>
                 </Row>
             </Container>
 

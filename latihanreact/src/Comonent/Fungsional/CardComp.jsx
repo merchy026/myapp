@@ -10,7 +10,7 @@ function CardComp(props) {
 
         <div>
             <Card>
-                <CardImg top width="100%" src="https://placeimg.com/640/480/tech" alt="Card image cap" />
+                <CardImg top width="100%" src="https://assets-a1.kompasiana.com/items/album/2019/02/08/donor-darah-5c5d55acc112fe5e867901e2.jpg" alt="Card image cap" />
                 <CardBody>
                     <CardTitle><h3>{props.judul}</h3></CardTitle>
                     <CardSubtitle>{props.tanggal}</CardSubtitle>

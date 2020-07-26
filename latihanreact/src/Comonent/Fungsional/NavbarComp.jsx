@@ -27,19 +27,19 @@ const NavbarComp = (props) => {
                             <NavLink to="/about" className="nav-link">About</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/mahasiswa" className="nav-link">Mahasiswa</NavLink>
+                            <NavLink to="/calonanggota" className="nav-link"> Calon Anggota </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/kelas" className="nav-link">Class</NavLink>
+                            <NavLink to="/kelas" className="nav-link">Info</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/hooks" className="nav-link">Hook</NavLink>
+                            <NavLink to="/hooks" className="nav-link">Register</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/useeffects" className="nav-link">Use Effects</NavLink>
+                            <NavLink to="/useeffects" className="nav-link">Login Anggota</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/produk" className="nav-link">Produk</NavLink>
+                            <NavLink to="/produk" className="nav-link">Login Admin</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink to="/reducer" className="nav-link">Reducer</NavLink>

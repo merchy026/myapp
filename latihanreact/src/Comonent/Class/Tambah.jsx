@@ -8,7 +8,6 @@ const api = 'http://localhost:3001'
 class TambahComp extends PureComponent {
     constructor(props) {
         super(props)
-
         this.state = {
             nama: '',
             alamat: '',
@@ -86,7 +85,7 @@ class TambahComp extends PureComponent {
                             </Row>
                         </FormGroup>
                         
-                        <Label>Jenia Kelamin</Label>
+                        <Label>Jenis Kelamin</Label>
                         <FormGroup>
                             <Row>
                                 <Col>
@@ -118,17 +117,7 @@ class TambahComp extends PureComponent {
                                 </Col>
                             </Row>
                         </FormGroup>
-                        <Label>Nama</Label>
-                        <FormGroup>
-                            <Row>
-                                <Col>
-                                    <Input type="text" name="nama" value={this.state.nama} onChange={this.handleChange} placeholder="Masukan Nama" />
-                                </Col>
-                            </Row>
-                        </FormGroup>
-                       
-                        
-
+                
                         <FormGroup>
                             <Row>
                                 <Col>
