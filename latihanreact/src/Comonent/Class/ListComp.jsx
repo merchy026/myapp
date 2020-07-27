@@ -103,8 +103,9 @@ class LisComp extends PureComponent {
                                             }
                                         }>
                                         <Button>Edit</Button>
-                                        
+
                                     </Link>
+                                    <span> </span>
                                     <span> </span>
                                     <Button onClick={() => this.Deleteanggota(calonanggota.id_anggota)} color="danger">Hapus</Button>
                                 </td>

@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import {
-    Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, NavbarText, Button
+    Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    UncontrolledDropdown, NavbarText, Button,
 } from 'reactstrap';
 
 import { NavLink } from 'react-router-dom'
 import { useContext } from 'react';
-import { CartContext } from '../../CardContext';
+import { AuthContext } from '../../App';
 
-const NavbarComp = (props) => {
+function NavbarComp() {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
-
-    const {value, setValue} = useContext(CartContext)
 
     return (
         <div>
@@ -35,20 +36,24 @@ const NavbarComp = (props) => {
                         <NavItem>
                             <NavLink to="/hooks" className="nav-link">Galeri</NavLink>
                         </NavItem>
-                        <NavItem>
-                            <NavLink to="/useeffects" className="nav-link">Login Anggota</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink to="/produk" className="nav-link">Login Admin</NavLink>
-                        </NavItem>
+                        <UncontrolledDropdown >
+                            <DropdownToggle nav caret>
+                                Login
+                                </DropdownToggle>
+                            <DropdownMenu right>
+                                <DropdownItem>
+                                    <NavLink to="/loginanggota" className="nav-link" >Anggota</NavLink>
+
+                                </DropdownItem>
+                                <DropdownItem>
+                                    <NavLink to="/loginpetugas" className="nav-link" >Petugas</NavLink>
+                                </DropdownItem>
+                            </DropdownMenu>
+                        </UncontrolledDropdown>
+
                     </Nav>
 
-                    <NavbarText>
-                        <Button color="danger">
-                            <i className="fa fa-shopping-cart"></i>
-                            <span className="badge badge-light">{value}</span>
-                        </Button>
-                    </NavbarText>
+
 
                 </Collapse>
             </Navbar>

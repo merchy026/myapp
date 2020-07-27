@@ -5,7 +5,7 @@ import axios from 'axios'
 import {useContext} from 'react';
 import { AuthContext } from '../../App';
 const qs = require('querystring')
-const api = "http://localhost:3002"
+const api = "http://localhost:3001"
 
 function LoginComp() {
     const { dispatch } = useContext(AuthContext)
