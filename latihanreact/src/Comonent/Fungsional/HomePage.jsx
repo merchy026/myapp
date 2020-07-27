@@ -20,13 +20,10 @@ function HomePage() {
                 </div>
 
                 <Alert color="warning">
-                    <p>PMI PURWOKERTO, Angela Marici  Uba Langobelen</p> 
+                    <p>PMI PURWOKERTO, Melayani Dengan Kasih</p> 
                 </Alert>
 
-
-
-
-                <p className="lead">Mereka Selamat Kita Sehat.</p>
+                <p className="lead"> Darah Kita, Mereka Selamat Kita Sehat.</p>
                 <hr className="my-2" />
                 <p>Memberikan Informasi Donor Darah.</p>
                 <p className="lead">

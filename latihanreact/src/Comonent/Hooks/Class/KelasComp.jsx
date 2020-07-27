@@ -17,7 +17,10 @@ const Example = (props) => {
         <Row>
             <Col sm="6">
                 <Card body>
-                    <CardTitle><h1>Apa syarat-syarat untuk mendonorkan darah?</h1></CardTitle>
+                    <div className="imageatas">
+                        <img src="https://cdn.idntimes.com/content-images/post/20160213/sziv-vilagnapja-727e2cfd7bcda634b69beee3a51ba4fa.jpg" alt="" />
+                    </div>
+                    <CardTitle><h4>Apa syarat-syarat untuk mendonorkan darah?</h4></CardTitle>
                     <Alert color="danger">
                         <CardText>Usia 17-60 tahun (usia 17 tahun diperbolehkan menjadi donor bila mendapat izin tertulis dari orang tua)
                         Berat badan minimal 45 kg.
@@ -34,6 +37,36 @@ const Example = (props) => {
                         kecanduan minuman beralkohol;
                         mengidap atau beresiko tinggi terhadap HIV/AIDS;
                         dokter menyarankan untuk tidak menyubangkan darah karena alasan kesehatan;
+                    </CardText><a href="#" className="alert-link"></a>
+                    </Alert>
+
+                    <CardTitle><h4>Apa Manfaat Donor Darah?</h4></CardTitle>
+                    <Alert color="danger">
+                        <CardText> Pernahkah Anda melakukan donor darah? Beruntunglah jika pernah atau bahkan rutin melakukannya berikut ini manfaat dari donor darah :
+
+                        Bentuk kepedulian terhadap sesama
+                        Memperpanjang hidup oran lain
+                        Membantu hidup orang lain
+                        Satu kantong darah dapat menyelamatkan 3 nyawa
+                        Membantu menurunkan berat badan
+                        Membantu membakar kalori
+                        Deteksi dini resiko kesehatan
+                        Melindungi jantung
+                        Mencegah stroke
+                        Mengatur kontrol kesehatan
+                        Meningkatkan sel darah merah
+                        Meningkatkan kapasitas paru-paru dan ginjal
+                        Meningkatkan kesehatan psikologis
+                        Membantu sirkulasi darah
+                        Memaksimalkan darah dalam paru-paru
+                        Menurunkan zat seng dalam darah
+                        Memperbaharui sel darah baru
+                        Mencegah resiko kesehatan
+                        Mencegah penyakit langka
+                        Menghilangkan kaku di pundak
+                        Mengalahkan kelebihan zat besi
+                        Mengetahui lebih lanjut tentang tipe darah individu
+
                     </CardText><a href="#" className="alert-link"></a>
                     </Alert>
 

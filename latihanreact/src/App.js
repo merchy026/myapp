@@ -64,7 +64,7 @@ const App = () => {
           <Route exact path="/calonanggota" component={LisComp} />
           <Route exact path="/calonanggota/tambah" component={TambahComp} />
           <Route exact path="/calonanggota/edit" component={EditComp} />
-          <Route exact path="/kelas" component={KelasComp} />
+          <Route exact path="/info" component={KelasComp} />
           <Route exact path="/hooks" component={HooksComp} />
           <Route exact path="/useeffects" component={HooksUseEffects} />
           <Route exact path="/produk" component={ProductComp} />
